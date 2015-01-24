@@ -4,7 +4,7 @@
 	<groupId>org.woehlke</groupId>
 	<artifactId>beachbox</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>BeachBox</name>
 	<url>http://www.thomas-woehlke.de/p/beachbox</url>
 	<properties>
@@ -323,17 +323,16 @@
 	</dependencies>
 	<organization>
 		<name>Thomas Woehlke</name>
-		<url>https://github.com/phasenraum2010/simpleworklist</url>
+		<url>https://github.com/phasenraum2010/beachbox</url>
 	</organization>
 	<inceptionYear>2012</inceptionYear>
 	<scm>
 		<url>https://github.com/phasenraum2010/simpleworklist.git</url>
-		<connection>scm:git:https://github.com/phasenraum2010/simpleworklist.git</connection>
-		<developerConnection>scm:git:https://github.com/phasenraum2010/simpleworklist.git</developerConnection>
-	  <tag>beachbox-1.0.0</tag>
-  </scm>
+		<connection>scm:git:https://github.com/phasenraum2010/beachbox.git</connection>
+		<developerConnection>scm:git:https://github.com/phasenraum2010/beachbox.git</developerConnection>
+  	</scm>
 	<issueManagement>
-		<url>https://github.com/phasenraum2010/simpleworklist/issues</url>
+		<url>https://github.com/phasenraum2010/beachbox/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 	<distributionManagement>
@@ -342,15 +341,15 @@
 			<snapshotRepository> <id>nexus</id> <name>Nexus Service on Developer Machine</name> 
 			<url>http://localhost:8081/nexus/content/groups/public/</url> </snapshotRepository> -->
 		<site>
-			<id>simpleworklist.shadowfax.fritz.box</id>
-			<url>file:///opt/local/apache2/htdocs/p/simpleworklist</url>
+			<id>beachbox.shadowfax.fritz.box</id>
+			<url>file:///opt/local/apache2/htdocs/p/beachbox</url>
 		</site>
 	</distributionManagement>
     <developers>
         <developer>
             <name>Thomas Wöhlke</name>
             <email>thomas@woehlke.org</email>
-            <url>https://github.com/phasenraum2010/simpleworklist</url>
+            <url>https://github.com/phasenraum2010/beachbox</url>
         </developer>
     </developers>
 
