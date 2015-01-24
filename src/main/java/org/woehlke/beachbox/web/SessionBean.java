@@ -9,6 +9,8 @@ import java.io.Serializable;
  */
 public class SessionBean implements Serializable {
 
+    private final static long serialVersionUID = 0L;
+
     @SafeHtml
     private String searchString;
 

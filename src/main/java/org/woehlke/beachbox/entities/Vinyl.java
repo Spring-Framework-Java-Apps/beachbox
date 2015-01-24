@@ -10,6 +10,8 @@ import java.io.Serializable;
 @Table(name="vinyl")
 public class Vinyl implements Serializable {
 
+    private final static long serialVersionUID = 0L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
