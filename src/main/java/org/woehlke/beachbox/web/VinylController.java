@@ -3,6 +3,7 @@ package org.woehlke.beachbox.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefaults;
@@ -34,9 +35,10 @@ public class VinylController {
     private VinylService vinylService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String getAll(@PageableDefaults(pageNumber = 0, value = 30,sort={"interpret"}) Pageable pageable, Model model){
+    public String getAll(@PageableDefaults(pageNumber = 0, value = 30, sort={"interpret"}) Pageable pageable, Model model){
         Page<Vinyl> page;
         SessionBean searchItem;
+        pageable = addSort(pageable);
         if(model.containsAttribute("searchItem")) {
             searchItem = (SessionBean) model.asMap().get("searchItem");
         } else {
@@ -67,10 +69,26 @@ public class VinylController {
         return "all";
     }
 
+    private Pageable addSort(Pageable pageable){
+        Sort sort = pageable.getSort();
+        Sort.Order order = sort.iterator().next();
+        String property = order.getProperty();
+        Sort.Direction direction = order.getDirection();
+        if(property.equals("song")){
+            pageable = new PageRequest(pageable.getPageNumber(),pageable.getPageSize(), direction,"song","interpret");
+        } else if (property.equals("interpret")) {
+            pageable = new PageRequest(pageable.getPageNumber(),pageable.getPageSize(), direction,"interpret","song");
+        } else {
+            pageable = new PageRequest(pageable.getPageNumber(),pageable.getPageSize(), direction ,property, "interpret","song");
+        }
+        return pageable;
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String search(@Valid SessionBean searchItem, BindingResult result,
-                         @PageableDefaults(pageNumber = 0, value = 30,sort={"interpret"}) Pageable pageable, Model model){
+                         @PageableDefaults(pageNumber = 0, value = 30,  sort={"interpret"}) Pageable pageable, Model model){
         Page<Vinyl> page;
+        pageable = addSort(pageable);
         if (result.hasErrors() || searchItem.isEmpty()){
             page = vinylService.findAll(pageable);
         } else {
