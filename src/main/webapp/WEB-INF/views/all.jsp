@@ -4,7 +4,7 @@
 <html lang="de">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BeachBox</title>
+    <title>MusicBox</title>
     <!-- Bootstrap -->
     <link href="webjars/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Optional theme -->
@@ -116,8 +116,8 @@
             <th><a href="${startUrl}&page.sort=seite&page.sort.dir=asc">Seite</th>
             <th><a href="${startUrl}&page.sort=jahr&page.sort.dir=asc">Jahr</th>
             <th><a href="${startUrl}&page.sort=genre&page.sort.dir=asc">Genre</th>
-            <th><a href="${startUrl}&page.sort=label&page.sort.dir=asc">Label</th>
             <th><a href="${startUrl}&page.sort=bemerkung&page.sort.dir=asc">Bemerkung</th>
+            <th><a href="${startUrl}&page.sort=label&page.sort.dir=asc">Label</th>
             <c:if test="${searchItem.bearbeiten}">
             <th>&auml;ndern</th>
             <th>l&ouml;schen</th>
@@ -136,8 +136,8 @@
             <td>${v.seite}</td>
             <td>${v.jahr}</td>
             <td>${v.genre}</td>
-            <td>${v.label}</td>
             <td>${v.bemerkung}</td>
+            <td>${v.label}</td>
             <c:if test="${searchItem.bearbeiten}">
             <td><a href="${editUrl}/${v.id}" title="id"><span class="glyphicon glyphicon-edit" /></a></td>
             <td><a href="${deleteUrl}/${v.id}" title="id"><span class="glyphicon glyphicon-trash" /></a></td>

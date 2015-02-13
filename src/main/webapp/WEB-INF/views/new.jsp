@@ -3,7 +3,7 @@
 <html lang="de">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BeachBox</title>
+    <title>MusicBox</title>
     <!-- Bootstrap -->
     <link href="webjars/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Optional theme -->
@@ -80,18 +80,18 @@
             <form:errors path="genre" class="alert alert-danger"/>
         </div>
         <div class="input-group">
-            <form:label path="label" class="control-label">Label</form:label>
-            <div class="controls">
-                <form:input path="label" class="form-control" />
-            </div>
-            <form:errors path="label" class="alert alert-danger"/>
-        </div>
-        <div class="input-group">
             <form:label path="bemerkung" class="control-label">Bemerkung</form:label>
             <div class="controls">
                 <form:input path="bemerkung" class="form-control" />
             </div>
             <form:errors path="bemerkung" class="alert alert-danger"/>
+        </div>
+        <div class="input-group">
+            <form:label path="label" class="control-label">Label</form:label>
+            <div class="controls">
+                <form:input path="label" class="form-control" />
+            </div>
+            <form:errors path="label" class="alert alert-danger"/>
         </div>
         <div class="controls">
             <form:hidden path="id"/>
