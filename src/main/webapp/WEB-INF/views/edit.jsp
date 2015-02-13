@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>BeachBox</h1>
+    <h1>MusicBox</h1>
     <form:form id="formId" commandName="vinyl" method="post"
                class="form-horizontal">
         <div class="input-group">

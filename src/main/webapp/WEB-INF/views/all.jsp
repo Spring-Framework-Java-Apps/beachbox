@@ -36,7 +36,7 @@
 <body>
     <div class="container">
     <div class="row">
-        <h1>BeachBox</h1>
+        <h1>MusicBox</h1>
         <hr />
     </div>
 
