@@ -19,22 +19,13 @@
     <form:form id="formId" commandName="vinyl" method="post"
                class="form-horizontal">
         <div class="input-group">
-            <form:label path="rubrik" class="control-label">Rubrik</form:label>
+            <form:label path="type" class="control-label">Tontraeger</form:label>
             <div class="controls">
-                <form:select path="rubrik">
-                    <form:options items="${rubrik}"/>
+                <form:select path="type">
+                    <form:options items="${type}" />
                 </form:select>
             </div>
-            <form:errors path="rubrik" class="alert alert-danger"/>
-        </div>
-        <div class="input-group">
-            <form:label path="tontraeger" class="control-label">Tontraeger</form:label>
-            <div class="controls">
-                <form:select path="tontraeger">
-                    <form:options items="${tontraeger}" />
-                </form:select>
-            </div>
-            <form:errors path="tontraeger" class="alert alert-danger"/>
+            <form:errors path="type" class="alert alert-danger"/>
         </div>
 
         <div class="input-group">

@@ -20,4 +20,6 @@ public interface VinylService {
     void deleteById(long id);
 
     void installInitialData();
+
+    void update01();
 }

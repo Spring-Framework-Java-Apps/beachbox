@@ -17,10 +17,7 @@ public class Vinyl implements Serializable {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private Rubrik rubrik;
-
-    @Enumerated(EnumType.STRING)
-    private Tontraeger tontraeger;
+    private VinylType type;
 
     @Column
     private String interpret;
@@ -54,20 +51,12 @@ public class Vinyl implements Serializable {
         this.id = id;
     }
 
-    public Rubrik getRubrik() {
-        return rubrik;
+    public VinylType getType() {
+        return type;
     }
 
-    public void setRubrik(Rubrik rubrik) {
-        this.rubrik = rubrik;
-    }
-
-    public Tontraeger getTontraeger() {
-        return tontraeger;
-    }
-
-    public void setTontraeger(Tontraeger tontraeger) {
-        this.tontraeger = tontraeger;
+    public void setType(VinylType type) {
+        this.type = type;
     }
 
     public String getInterpret() {
@@ -137,7 +126,7 @@ public class Vinyl implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Vinyl)) return false;
 
         Vinyl vinyl = (Vinyl) o;
 
@@ -148,10 +137,9 @@ public class Vinyl implements Serializable {
         if (jahr != null ? !jahr.equals(vinyl.jahr) : vinyl.jahr != null) return false;
         if (label != null ? !label.equals(vinyl.label) : vinyl.label != null) return false;
         if (name != null ? !name.equals(vinyl.name) : vinyl.name != null) return false;
-        if (rubrik != vinyl.rubrik) return false;
         if (seite != null ? !seite.equals(vinyl.seite) : vinyl.seite != null) return false;
         if (song != null ? !song.equals(vinyl.song) : vinyl.song != null) return false;
-        if (tontraeger != vinyl.tontraeger) return false;
+        if (type != vinyl.type) return false;
 
         return true;
     }
@@ -159,8 +147,7 @@ public class Vinyl implements Serializable {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (rubrik != null ? rubrik.hashCode() : 0);
-        result = 31 * result + (tontraeger != null ? tontraeger.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (interpret != null ? interpret.hashCode() : 0);
         result = 31 * result + (song != null ? song.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
@@ -176,8 +163,7 @@ public class Vinyl implements Serializable {
     public String toString() {
         return "Vinyl{" +
                 "id=" + id +
-                ", rubrik=" + rubrik +
-                ", tontraeger=" + tontraeger +
+                ", type=" + type +
                 ", interpret='" + interpret + '\'' +
                 ", song='" + song + '\'' +
                 ", name='" + name + '\'' +

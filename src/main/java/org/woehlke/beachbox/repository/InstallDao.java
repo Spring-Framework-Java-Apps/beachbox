@@ -6,4 +6,6 @@ package org.woehlke.beachbox.repository;
 public interface InstallDao {
 
     void installInitialData();
+
+    void update01();
 }

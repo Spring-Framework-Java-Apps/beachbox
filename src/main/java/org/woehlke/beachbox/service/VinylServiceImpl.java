@@ -52,7 +52,14 @@ public class VinylServiceImpl implements VinylService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
     public void installInitialData() {
         installDao.installInitialData();
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
+    public void update01() {
+        installDao.update01();
     }
 }

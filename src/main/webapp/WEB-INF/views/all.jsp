@@ -108,8 +108,7 @@
         <tr>
             <c:url var="startUrl" value="/?page.page=1&page.size=${page.size}"/>
             <!--<th><a href="${startUrl}&page.sort=id&page.sort.dir=asc">Id</a></th>-->
-            <th><a href="${startUrl}&page.sort=rubrik&page.sort.dir=asc">Rubrik</th>
-            <th><a href="${startUrl}&page.sort=tontraeger&page.sort.dir=asc">Tontraeger</th>
+            <th><a href="${startUrl}&page.sort=type&page.sort.dir=asc">Tontraeger</th>
             <th><a href="${startUrl}&page.sort=interpret&page.sort.dir=asc">Interpret</th>
             <th><a href="${startUrl}&page.sort=song&page.sort.dir=asc">Song</th>
             <th><a href="${startUrl}&page.sort=name&page.sort.dir=asc">Name</th>
@@ -128,8 +127,7 @@
             <c:url var="editUrl" value="/edit"/>
             <c:url var="deleteUrl" value="/delete"/>
             <!--<td>${v.id}</td>-->
-            <td>${v.rubrik}</td>
-            <td>${v.tontraeger}</td>
+            <td>${v.type}</td>
             <td>${v.interpret}</td>
             <td>${v.song}</td>
             <td>${v.name}</td>

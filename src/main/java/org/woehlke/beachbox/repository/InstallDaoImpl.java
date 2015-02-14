@@ -38,4 +38,22 @@ public class InstallDaoImpl implements InstallDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void update01() {
+        System.out.println("run SQL update01.");
+        try {
+            ClassLoader cl = InstallDaoImpl.class.getClassLoader();
+            InputStream is = cl.getResourceAsStream("update01.sql");
+            InputStreamReader isr =
+                    new InputStreamReader(is,"UTF-8");
+            BufferedReader br = new BufferedReader(isr);
+            br.lines().forEach(sql -> jdbcTemplate.execute(sql));
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.woehlke.beachbox.entities.Rubrik;
-import org.woehlke.beachbox.entities.Tontraeger;
 import org.woehlke.beachbox.entities.Vinyl;
+import org.woehlke.beachbox.entities.VinylType;
 import org.woehlke.beachbox.service.VinylService;
 
 import javax.inject.Inject;
@@ -103,15 +102,14 @@ public class VinylController {
             sort = page.getSort().toString().split(":")[0];
             //LOGGER.info("sort: " + sort);
         }
-        model.addAttribute("page",page);
+        model.addAttribute("page", page);
         searchItem.setBeginIndex(begin);
         searchItem.setEndIndex(end);
         searchItem.setCurrentIndex(current);
         searchItem.setSort(sort);
         searchItem.setSortDir("asc");
         model.addAttribute("searchItem",searchItem);
-        model.addAttribute("rubrik", Rubrik.values());
-        model.addAttribute("tontraeger", Tontraeger.values());
+        model.addAttribute("type", VinylType.values());
         return "all";
     }
 
@@ -119,8 +117,7 @@ public class VinylController {
     public String editGet(@PathVariable long id, Model model){
         Vinyl vinyl = vinylService.findById(id);
         model.addAttribute("vinyl",vinyl);
-        model.addAttribute("rubrik", Rubrik.values());
-        model.addAttribute("tontraeger", Tontraeger.values());
+        model.addAttribute("type", VinylType.values());
         return "edit";
     }
 
@@ -144,8 +141,7 @@ public class VinylController {
     public String newGet(Model model){
         Vinyl vinyl = new Vinyl();
         model.addAttribute("vinyl",vinyl);
-        model.addAttribute("rubrik", Rubrik.values());
-        model.addAttribute("tontraeger", Tontraeger.values());
+        model.addAttribute("type", VinylType.values());
         return "new";
     }
 
@@ -169,8 +165,7 @@ public class VinylController {
     public String deleteGet(@PathVariable long id, Model model){
         Vinyl vinyl = vinylService.findById(id);
         model.addAttribute("vinyl",vinyl);
-        model.addAttribute("rubrik", Rubrik.values());
-        model.addAttribute("tontraeger", Tontraeger.values());
+        model.addAttribute("type", VinylType.values());
         return "delete";
     }
 
@@ -208,6 +203,12 @@ public class VinylController {
     @RequestMapping(value = "/install", method = RequestMethod.GET)
     public String install(Model model){
         vinylService.installInitialData();
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/update01", method = RequestMethod.GET)
+    public String update01(Model model){
+        vinylService.update01();
         return "redirect:/";
     }
 }
