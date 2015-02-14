@@ -19,13 +19,13 @@
             width: 15%;
         }
         #search {
-            width: 25%;
+            width: 22%;
             display: block;
             float: left;
             vertical-align: middle;
         }
         #pager {
-            width: 70%;
+            width: 78%;
             display: block;
             float: right;
             vertical-align: middle;

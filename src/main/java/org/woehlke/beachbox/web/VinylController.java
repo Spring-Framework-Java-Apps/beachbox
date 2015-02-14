@@ -51,8 +51,8 @@ public class VinylController {
         }
         searchItem.setPageSize(pageable.getPageSize());
         int current = page.getNumber() + 1;
-        int begin = Math.max(1, current - 5);
-        int end = Math.min(begin + 10, page.getTotalPages());
+        int begin = Math.max(1, current - 10);
+        int end = Math.min(begin + 19, page.getTotalPages());
         Sort mySort = page.getSort();
         String sort = "";
         if(mySort != null) {
@@ -95,8 +95,8 @@ public class VinylController {
             page = vinylService.search(searchItem.getSearchString(),pageable);
         }
         int current = page.getNumber() + 1;
-        int begin = Math.max(1, current - 5);
-        int end = Math.min(begin + 10, page.getTotalPages());
+        int begin = Math.max(1, current - 10);
+        int end = Math.min(begin + 19, page.getTotalPages());
         Sort mySort = page.getSort();
         String sort = "";
         if(mySort != null) {
