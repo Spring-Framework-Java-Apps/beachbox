@@ -25,7 +25,8 @@ public class InstallDaoImpl implements InstallDao {
         System.out.println("run SQL initial data import.");
         try {
             ClassLoader cl = InstallDaoImpl.class.getClassLoader();
-            InputStream is = cl.getResourceAsStream("alle.sql");
+            // was 'alle.sql' before update01
+            InputStream is = cl.getResourceAsStream("db_backup_before_update01.sql");
             InputStreamReader isr =
                     new InputStreamReader(is,"UTF-8");
             BufferedReader br = new BufferedReader(isr);
