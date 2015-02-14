@@ -4,7 +4,7 @@
 	<groupId>org.woehlke</groupId>
 	<artifactId>beachbox</artifactId>
 	<packaging>war</packaging>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>BeachBox</name>
 	<url>http://www.thomas-woehlke.de/p/beachbox</url>
 	<properties>
@@ -274,7 +274,7 @@
 		<url>https://github.com/phasenraum2010/simpleworklist.git</url>
 		<connection>scm:git:https://github.com/phasenraum2010/beachbox.git</connection>
 		<developerConnection>scm:git:https://github.com/phasenraum2010/beachbox.git</developerConnection>
-  	  <tag>beachbox-1.1.0</tag>
+  	  <tag>HEAD</tag>
   </scm>
 	<issueManagement>
 		<url>https://github.com/phasenraum2010/beachbox/issues</url>
